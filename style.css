@@ -1,0 +1,143 @@
+/* Define custom fonts */
+@font-face {
+  font-family: "Catchy";
+  src: url("assets/fonts/CatchyMager-Normal.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@import url("https://fonts.cdnfonts.com/css/coco-gothic");
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Define color and font variables */
+:root {
+  --black: #000000;
+  --darkBrown: #623e2a;
+  --lightBrown: #91713c;
+  --lighterBrown: #efebe5;
+  --lightWhite: #f4f1ed;
+  --white: #ffffff;
+  --titleFont: "Catchy", sans-serif;
+  --bodyFont: "Coco Gothic", sans-serif;
+}
+
+/* Landing page styles */
+.landing-page {
+  background: url("assets/images/homepage.webp") center;
+  height: 100vh;
+}
+
+/* Filter styles */
+.filter {
+  background-color: rgba(98, 62, 42, 0.45);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Grid styles */
+.landing-page .filter .grid {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* Text styles */
+.landing-page .filter h2,
+.landing-page .filter h1,
+.landing-page .filter h3 {
+  color: var(--white);
+  text-transform: uppercase;
+  font-family: var(--bodyFont);
+}
+
+.landing-page .filter h2 {
+  letter-spacing: 0.481vw;
+  font-size: 1.0875vw;
+  font-weight: 700;
+  margin-bottom: 1.5vh;
+}
+
+.landing-page .filter h1 {
+  font-family: var(--titleFont);
+  font-size: 7.675vw;
+  font-weight: 200;
+}
+
+.landing-page .filter h3 {
+  font-family: var(--titleFont);
+  text-transform: capitalize;
+  font-size: 2.4vw;
+  font-weight: 200;
+  margin-top: 20px;
+}
+
+/* Icon styles */
+.landing-page .filter .icon {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 65px;
+  filter: invert(1) grayscale(1) brightness(2);
+}
+.landing-page .filter .navbar {
+  background-color: rgba(98, 62, 42, 0.45);
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center; /* This will center the items horizontally in their cells */
+  align-items: center; /* This will center the items vertically in their cells */
+}
+
+.landing-page .filter .navbar .h3 {
+  width: auto;
+}
+
+.presentation {
+  background-color: var(--lightWhite);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 90vh;
+}
+.presentation .text {
+  color: var(--darkBrown);
+  padding: 0rem 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.presentation .text h1 {
+  font-family: var(--titleFont);
+  font-size: 3.6vw;
+  font-weight: 550;
+  margin-bottom: 0.5vw;
+  top: 0;
+}
+.presentation .text p {
+  font-family: var(--bodyFont);
+  font-size: 1.2vw;
+  font-weight: 300;
+  margin-bottom: 1.5vw;
+  padding-top: 3vw;
+  line-height: 1.9vw;
+}
+.presentation img {
+  width: 60%;
+}
+.presentation .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
