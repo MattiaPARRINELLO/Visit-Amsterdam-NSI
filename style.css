@@ -89,6 +89,7 @@
   height: 65px;
   filter: invert(1) grayscale(1) brightness(2);
 }
+
 .landing-page .filter .navbar {
   background-color: rgba(98, 62, 42, 0.45);
   position: absolute;
@@ -97,12 +98,35 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
-  justify-items: center; /* This will center the items horizontally in their cells */
-  align-items: center; /* This will center the items vertically in their cells */
+  justify-items: center;
+  align-items: center;
 }
 
-.landing-page .filter .navbar .h3 {
+.landing-page .filter .navbar h3 {
   width: auto;
+  letter-spacing: 0.3vw;
+  font-size: 1.015vw;
+  font-weight: 700;
+  margin-bottom: 1.5vh;
+  font-family: var(--bodyFont);
+  text-transform: uppercase;
+  transform: scale(1);
+  transition: 1s;
+}
+
+.landing-page .filter .navbar h3:hover {
+  letter-spacing: 0.5vw;
+  text-decoration: underline;
+  transition: 1s;
+}
+
+.navbar:hover > h3:not(:hover) {
+  letter-spacing: 0.2vw;
+  transform: scale(0.9);
+  text-decoration: none;
+  color: gray;
+  transition: 1s;
+  filter: blur(1px);
 }
 
 .presentation {
