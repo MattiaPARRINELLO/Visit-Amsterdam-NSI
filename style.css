@@ -9,10 +9,20 @@
 @import url("https://fonts.cdnfonts.com/css/coco-gothic");
 
 /* Reset styles */
+.cs {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 * {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+body {
+  font-family: var(--bodyFont);
+  line-height: 1.5;
+  color: var(--white);
 }
 
 /* Define color and font variables */
@@ -27,6 +37,16 @@
   --bodyFont: "Coco Gothic", sans-serif;
 }
 
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
 /* Landing page styles */
 .landing-page {
   background: url("assets/images/homepage.webp") center;
@@ -38,9 +58,6 @@
   background-color: rgba(98, 62, 42, 0.45);
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 /* Grid styles */
@@ -55,29 +72,26 @@
 .filter h1,
 .filter h3 {
   color: var(--white);
-  text-transform: uppercase;
-  font-family: var(--bodyFont);
 }
 
 .filter h2 {
-  letter-spacing: 0.481vw;
-  font-size: 1.0875vw;
+  letter-spacing: 0.481rem;
+  font-size: 1.0875rem;
   font-weight: 700;
-  margin-bottom: 1.5vh;
+  margin-bottom: 1rem;
 }
 
 .filter h1 {
   font-family: var(--titleFont);
-  font-size: 7.675vw;
+  font-size: 7.175rem;
   font-weight: 200;
 }
 
 .filter h3 {
   font-family: var(--titleFont);
   text-transform: capitalize;
-  font-size: 2.4vw;
+  font-size: 1.9rem;
   font-weight: 200;
-  margin-top: 20px;
 }
 
 /* Icon styles */
@@ -86,7 +100,7 @@
   bottom: 10vh;
   left: 50%;
   transform: translateX(-50%);
-  height: 65px;
+  height: 10vh;
   filter: invert(1) grayscale(1) brightness(2);
 }
 
@@ -95,33 +109,32 @@
   position: absolute;
   width: 100%;
   top: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  display: flex;
+  justify-content: space-around;
   justify-items: center;
   align-items: center;
 }
 
 .filter .navbar h3 {
   width: auto;
+  margin: 20px;
   letter-spacing: 0.3vw;
-  font-size: 1.015vw;
+  font-size: 1.015rem;
   font-weight: 700;
   margin-bottom: 1.5vh;
-  font-family: var(--bodyFont);
   text-transform: uppercase;
   transform: scale(1);
   transition: 1s;
 }
 
 .filter .navbar h3:hover {
-  letter-spacing: 0.5vw;
+  letter-spacing: 0.5rem;
   text-decoration: underline;
   transition: 1s;
 }
 
 .navbar:hover > h3:not(:hover) {
-  letter-spacing: 0.2vw;
+  letter-spacing: 0.2rem;
   transform: scale(0.9);
   text-decoration: none;
   color: gray;
@@ -131,46 +144,360 @@
 
 .presentation {
   background-color: var(--lightWhite);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
   height: 90vh;
+  justify-content: center;
+  width: 100%;
+  gap: 5vw;
 }
 
 .presentation .text {
   color: var(--darkBrown);
-  padding: 0rem 2vw;
+  padding: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-weight: 100;
+  width: 40%;
 }
 
 .presentation .text h1 {
   font-family: var(--titleFont);
-  font-size: 3.6vw;
-  font-weight: 550;
+  font-size: 3.6rem;
   margin-bottom: 0.5vw;
   top: 0;
+  font-weight: 500;
 }
 
 .presentation .text p {
-  font-family: var(--bodyFont);
-  font-size: 1.2vw;
-  font-weight: 300;
-  margin-bottom: 1.5vw;
-  padding-top: 3vw;
-  line-height: 1.9vw;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-top: 3rem;
+  line-height: 1.8rem;
 }
 
 .presentation img {
-  width: 60%;
+  width: 80%;
 }
 
-.presentation .img {
+.sectionAlternate {
+  padding-top: 50px;
+  background-color: var(--lighterBrown);
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-.hotels {
-  background-color: var(--lighterBrown);
+#incontournables {
+  background-color: var(--lightWhite);
+}
+.sectionAlternate .title h1 {
+  margin-top: 20px;
+  font-family: var(--titleFont);
+  color: var(--darkBrown);
+  font-size: 3.8vw;
+  margin-bottom: 2vw;
+  font-weight: 500;
+}
+.sectionAlternate .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  column-gap: 5vw;
+  row-gap: 9vh;
+  padding: 20px;
+  width: 90vw;
+}
+.sectionAlternate .grid .element {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.txt {
+  color: var(--darkBrown);
+  width: 40%;
+}
+
+.txt h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.txt p {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  font-weight: 100;
+  line-height: 32px;
+  letter-spacing: 1.2px;
+}
+
+.txt span {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.txt .starsEl {
+  margin-top: 30px;
+  width: 40px;
+  fill: var(--lightBrown); /* Change this to your desired color */
+}
+
+.sectionAlternate img {
+  object-fit: cover;
+  height: 50vh;
+  width: 40%;
+}
+
+footer {
+  background-color: var(--darkBrown);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+#menu {
+  display: none;
+}
+#burger-menu {
+  display: none;
+}
+
+@media all and (max-width: 1440px) {
+  .landing-page .grid h1 {
+    letter-spacing: 30px;
+  }
+  .presentation .text h1 {
+    font-size: 3.5rem;
+  }
+  .presentation .text p {
+    font-size: 1.3rem;
+    line-height: 1.7rem;
+  }
+  .presentation img {
+    width: 70%;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .landing-page .grid h1 {
+    letter-spacing: 20px;
+  }
+  .presentation .text {
+    width: 95%;
+    padding: 10px;
+  }
+  .presentation .text h1 {
+    font-size: 5vw;
+  }
+  .presentation .text p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+  .presentation img {
+    width: 80%;
+  }
+
+  .sectionAlternate {
+    padding-top: 20px;
+  }
+  .sectionAlternate .grid {
+    width: 100%;
+  }
+  .sectionAlternate .grid .element {
+    width: 100%;
+  }
+  .sectionAlternate .title h1 {
+    font-size: 3.6rem;
+  }
+  .sectionAlternate .txt h2 {
+    margin-bottom: 1px;
+    font-size: 1.9rem;
+  }
+  .sectionAlternate .txt p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    line-height: 1.7rem;
+  }
+
+  .sectionAlternate .txt span {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  .sectionAlternate .starsEl {
+    margin-top: 20px;
+    width: 30px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .landing-page .grid h1 {
+    letter-spacing: 5px;
+  }
+  .landing-page .navbar h3 {
+    font-size: 0.8rem;
+  }
+  .presentation {
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100px;
+  }
+  .presentation .text {
+    padding-left: 6vw;
+  }
+  .presentation .text h1 {
+    font-size: 3rem;
+  }
+  .presentation .text p {
+    font-size: 4vw;
+    line-height: 5.5vw;
+  }
+  .presentation img {
+    width: 95vw;
+    height: 250px;
+    object-fit: cover;
+  }
+}
+
+@media all and (max-width: 426px) {
+  .landing-page .grid h1 {
+    letter-spacing: 10px;
+    font-size: 3rem;
+  }
+
+  .landing-page .navbar {
+    display: none;
+  }
+
+  .sectionAlternate .grid .element {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sectionAlternate .grid {
+    width: 100%;
+  }
+  .txt {
+    width: 95%;
+  }
+  .sectionAlternate img {
+    width: 90%;
+    height: 40vh;
+  }
+  .sectionAlternate .title {
+    font-size: 1vw;
+    text-align: center;
+  }
+  .sectionAlternate .title h1 {
+    font-size: 2.5rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+  #burger-menu {
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+    margin: 50px;
+    overflow: visible;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+    display: block;
+  }
+  #burger-menu span,
+  #burger-menu span:before,
+  #burger-menu span:after {
+    background: #fff;
+    display: block;
+    height: 4px;
+    opacity: 1;
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    overflow: visible;
+  }
+  #burger-menu span:before,
+  #burger-menu span:after {
+    content: "";
+  }
+  #burger-menu span {
+    right: 0px;
+    top: 13px;
+    width: 27px;
+  }
+  #burger-menu span:before {
+    left: 0px;
+    top: -10px;
+    width: 16px;
+  }
+  #burger-menu span:after {
+    left: 0px;
+    top: 10px;
+    width: 20px;
+  }
+
+  #burger-menu.close span {
+    transform: rotate(-45deg);
+    top: 13px;
+    width: 27px;
+  }
+  #burger-menu.close span:before {
+    top: 0px;
+    transform: rotate(90deg);
+    width: 27px;
+  }
+  #burger-menu.close span:after {
+    top: 0px;
+    left: 0;
+    transform: rotate(90deg);
+    opacity: 0;
+    width: 0;
+  }
+
+  #menu {
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    text-align: center;
+    padding-top: 20px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  #menu.overlay {
+    visibility: visible;
+    opacity: 1;
+    padding-top: 100px;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+  }
+
+  #menu li {
+    list-style: none;
+  }
+  #menu a {
+    color: #fff;
+    display: block;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-decoration: none;
+  }
 }
