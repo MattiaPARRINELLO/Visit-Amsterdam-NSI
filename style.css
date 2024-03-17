@@ -13,10 +13,13 @@
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
+.ofAuto {
+  overflow: auto;
+}
 * {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 body {
@@ -142,6 +145,10 @@ body {
   filter: blur(1px);
 }
 
+.navbar a {
+  text-decoration: none;
+  color: var(--white);
+}
 .presentation {
   background-color: var(--lightWhite);
   display: flex;
@@ -207,7 +214,7 @@ body {
   gap: 20px;
   column-gap: 5vw;
   row-gap: 9vh;
-  padding: 20px;
+  padding-bottom: 20px;
   width: 90vw;
 }
 .sectionAlternate .grid .element {
@@ -272,6 +279,56 @@ footer {
   display: none;
 }
 
+.savoirplus {
+  background-color: var(--lightWhite);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px;
+  gap: 20px;
+  font-size: 1.4rem;
+  font-weight: 100;
+  line-height: 32px;
+  letter-spacing: 1.2px;
+  color: var(--darkBrown);
+}
+
+.savoirplus h1 {
+  font-family: var(--titleFont);
+  color: var(--darkBrown);
+  font-size: 6vw;
+  margin-bottom: 2vw;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.savoirplus table {
+  border-collapse: collapse;
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.savoirplus table th,
+.savoirplus table td {
+  border: 1px solid var(--darkBrown);
+  padding: 10px;
+}
+
+.savoirplus table th {
+  background-color: var(--lighterBrown);
+  color: var(--darkBrown);
+  font-weight: bold;
+}
+
+.savoirplus table td {
+  background-color: var(--lightWhite);
+}
+
+/* Responsive table styles */
 @media all and (max-width: 1440px) {
   .landing-page .grid h1 {
     letter-spacing: 30px;
@@ -290,7 +347,8 @@ footer {
 
 @media all and (max-width: 1024px) {
   .landing-page .grid h1 {
-    letter-spacing: 20px;
+    letter-spacing: 1.5vw;
+    font-size: 13vw;
   }
   .presentation .text {
     width: 95%;
@@ -344,7 +402,7 @@ footer {
     letter-spacing: 5px;
   }
   .landing-page .navbar h3 {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
   .presentation {
     flex-wrap: wrap;
@@ -366,6 +424,57 @@ footer {
     width: 95vw;
     height: 250px;
     object-fit: cover;
+  }
+  footer {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
   }
 }
 
@@ -499,5 +608,12 @@ footer {
     font-size: 32px;
     margin-bottom: 30px;
     text-decoration: none;
+  }
+}
+
+@media all and (max-width: 320px) {
+  .landing-page .grid h1 {
+    letter-spacing: 5px;
+    font-size: 2.5rem;
   }
 }
