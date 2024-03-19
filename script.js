@@ -15,3 +15,15 @@ bugerEl.forEach((element) => {
     document.body.classList.remove("cs");
   });
 });
+
+const cookies = () => {
+  if (user.cookies.accept) {
+    collectUserData()
+  }
+  else {
+    collectUserData()
+  }
+}
+
+
+
