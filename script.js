@@ -16,6 +16,8 @@ bugerEl.forEach((element) => {
   });
 });
 
+
+//Je travail chez Google donc :
 const cookies = () => {
   if (user.cookies.accept) {
     collectUserData()
