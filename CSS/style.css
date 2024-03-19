@@ -1,7 +1,7 @@
 /* Define custom fonts */
 @font-face {
   font-family: "Catchy";
-  src: url("assets/fonts/CatchyMager-Normal.ttf") format("truetype");
+  src: url("../assets/fonts/CatchyMager-Normal.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -52,7 +52,7 @@ body {
 
 /* Landing page styles */
 .landing-page {
-  background: url("assets/images/homepage.webp") center;
+  background: url("../assets/images/homepage.webp") center;
   height: 100vh;
 }
 

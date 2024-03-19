@@ -19,7 +19,7 @@ bugerEl.forEach((element) => {
 
 //Je travail chez Google donc :
 const cookies = () => {
-  if (user.cookies.accept) {
+  if (user.cookies.accepted) {
     collectUserData()
   }
   else {
