@@ -1,7 +1,7 @@
 document.write(`        <header class="navbar">
-<h3><a href="#pres">Présentation</a></h3>
-<h3><a href="#hotels">Hôtel</a></h3>
-<h3><a href="#incontournables">Les incontournables</a></h3>
+<h3><a href="index.html#pres">Présentation</a></h3>
+<h3><a href="index.html#hotels">Hôtel</a></h3>
+<h3><a href="index.html#incontournables">Les incontournables</a></h3>
 <h3><a href="enSavoirPlus.html">En savoir plus</a></h3>
 </header>
 <div id="burger-menu">
@@ -9,10 +9,10 @@ document.write(`        <header class="navbar">
 </div>
 <header id="menu">
 <ul>
-  <li><a class="burgerEl" href="#pres">Présentation</a></li>
-  <li><a class="burgerEl" href="#hotels">Hotel</a></li>
+  <li><a class="burgerEl" href="index.html#pres">Présentation</a></li>
+  <li><a class="burgerEl" href="index.html#hotels">Hotel</a></li>
   <li>
-    <a class="burgerEl" href="#incontournables"
+    <a class="burgerEl" href="index.html#incontournables"
       >Les incontournables</a
     >
   </li>
